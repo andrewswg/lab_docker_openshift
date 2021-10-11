@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  signup:
+    image: 127.0.0.1:5900/demo_signup:1.0.0
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    build: ./signup
+    ports:
+      - "5000:5000"
+  signin:
+    image: 127.0.0.1:5900/demo_signin:1.0.0
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    build: ./signin
+    ports:
+      - "5001:5000"
+  profile-get:
+    image: 127.0.0.1:5900/demo_profile_get:1.0.0
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    build: ./profile/get
+    ports:
+      - "5002:5000"
+  profile-insertupdate:
+    image: 127.0.0.1:5900/demo_profile_insertupdate:1.0.0
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    build: ./profile/insertupdate
+    ports:
+      - "5003:5000"

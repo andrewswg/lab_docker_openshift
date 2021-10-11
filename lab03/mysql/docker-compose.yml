@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    environment:
+      MYSQL_USER: 'andrew'
+      MYSQL_PASSWORD: 'xe2^9H7p'
+      MYSQL_ROOT_PASSWORD: 'xe2^9H7p' # TODO: Change this
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-volumes:/var/lib/mysql
+volumes:
+  mysql-volumes:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /root/mysql-data

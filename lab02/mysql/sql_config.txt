@@ -1,0 +1,8 @@
+view the credentials by sshing into your gear and running the command: 
+env | grep MYSQL
+
+GRANT ALL PRIVILEGES ON *.* TO 'userH4V'@'%';
+
+CREATE DATABASE demo_docker;
+
+select * from information_schema.user_privileges;
